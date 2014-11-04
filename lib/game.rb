@@ -1,10 +1,9 @@
 module BlackJack
   class Game
     def initialize
-      @deck = Deck.new
-      @deck.shuffle
-
+      new_deck
       @players = []
+      @bet_amount = 10
     end
 
     def add_player
@@ -24,7 +23,12 @@ module BlackJack
       game_over
     end
 
+    def new_deck
+      @deck = Deck.new
+      @deck.shuffle
+      @deck
 
+    end
 
     def players
       @players
@@ -32,6 +36,10 @@ module BlackJack
 
     def deck
       @deck
+    end
+
+    def bet_amount
+      @bet_amount
     end
 
   end
