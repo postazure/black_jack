@@ -24,7 +24,7 @@ module BlackJack
 
 
     def size
-      @size = @deck.length
+      @deck.length
     end
 
     def cards
