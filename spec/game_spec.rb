@@ -8,3 +8,10 @@
 # Write specs one at a time
 # Write the code getting the spec to pass
 # Rinse and repeat
+require 'spec_helper'
+
+xdescribe BlackJack::Game do
+  let(:game) { BlackJack::Game.new }
+
+
+end

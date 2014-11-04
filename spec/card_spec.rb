@@ -12,7 +12,7 @@ describe BlackJack::Card do
     end
   end
 
-  xdescribe '#values' do
+  describe '#values' do
     context 'when the face is a number' do
       let(:face) { '6' }
 
@@ -47,7 +47,7 @@ describe BlackJack::Card do
       end
 
       context "when 'K'" do
-        let(:face) { 'Q' }
+        let(:face) { 'K' }
 
         it "should be an array with only 10" do
           expect(card.values).to be == [10]
@@ -56,7 +56,7 @@ describe BlackJack::Card do
     end
   end
 
-  xdescribe '#==' do
+  describe '#==' do
     context "when two cards have different values and suits" do
       let(:card_1) { BlackJack::Card.new(suit, '3') }
       let(:card_2) { BlackJack::Card.new(suit, '2') }
