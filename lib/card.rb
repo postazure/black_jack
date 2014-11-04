@@ -3,6 +3,7 @@ module BlackJack
     def initialize suit, face
       @suit = suit
       @face = face
+      @value
     end
 
     def suit
@@ -17,11 +18,11 @@ module BlackJack
       rank_dict = {'A' => [1,11],
         'J' => [10], 'Q' => [10], 'K' => [10]}
       if @face =~ /[A-Z]/
-        @face = rank_dict[@face]
+        @value = rank_dict[@face]
       else
-        @face = [@face.to_i]
+        @value = [@face.to_i]
       end
-      @face
+      @value
     end
 
     def face

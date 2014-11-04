@@ -45,8 +45,12 @@ module BlackJack
       @hand.empty?
     end
 
+    def cards
+      @hand
+    end
+
 		def bust?
-			self.values.first > 21
+			self.values.first > 21 if !self.empty?
 		end
 
 		def hit?
