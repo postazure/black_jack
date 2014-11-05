@@ -53,12 +53,12 @@ module BlackJack
 			self.values.first > 21 if !self.empty?
 		end
 
-		def hit?
+		def hit? risk = 16
 			ary = self.values
 			hit = true
 
 			ary.each do |value|
-				if value.between?(16,21)
+				if value.between?(risk,21)
 					hit = false
 				end
 			end

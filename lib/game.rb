@@ -6,8 +6,8 @@ module BlackJack
       @bet_amount = 10
     end
 
-    def add_player
-      @players.push(Player.new)
+    def add_player risk = 16
+      @players.push(Player.new(risk))
     end
 
     def over?

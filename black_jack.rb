@@ -84,8 +84,8 @@ game = BlackJack::Game.new
 deck = game.deck
 bet_amount = game.bet_amount
 
-game.add_player
-game.add_player
+game.add_player 13 #will hit if below
+game.add_player 20 #will hit if below
 players = game.players
 
 
@@ -109,7 +109,7 @@ while running
     game.players.each_with_index do |player, i|
       hand = player.hand
 
-      if hand.hit?
+      if hand.hit? player.risk
         card = deck.deal
         player.hand.add(card)
         puts

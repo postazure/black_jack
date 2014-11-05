@@ -1,9 +1,10 @@
 
 module BlackJack
   class Player
-    def initialize
+    def initialize risk
       redeal
       @chip_count = 1000
+      @risk = risk
 
     end
 
@@ -22,6 +23,10 @@ module BlackJack
 
     def chip_count
       @chip_count
+    end
+
+    def risk
+      @risk
     end
 
 
