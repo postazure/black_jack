@@ -53,7 +53,7 @@ module BlackJack
 			self.values.first > 21 if !self.empty?
 		end
 
-		def hit? risk = 16
+		def hit? risk 
 			ary = self.values
 			hit = true
 

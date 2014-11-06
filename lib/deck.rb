@@ -1,7 +1,12 @@
 module BlackJack
   class Deck
-    def initialize
+    def initialize num_of_decks = 2
+      @count = num_of_decks
+      build_deck
 
+    end
+
+    def build_deck
       heart =   "\u2661".encode('utf-8')
       spade =   "\u2664".encode('utf-8')
       diamond = "\u2662".encode('utf-8')
@@ -12,13 +17,15 @@ module BlackJack
 
       @deck = []
 
-      suits.each do |suit|
-        faces.each do |face|
-          @deck << Card.new(suit, face)
+      @count.times do |i|
+        suits.each do |suit|
+          faces.each do |face|
+            @deck << Card.new(suit, face)
+          end
         end
       end
-      
     end
+
 
     def shuffle
       @deck.shuffle!
@@ -28,9 +35,12 @@ module BlackJack
       @deck.pop
     end
 
-
     def size
       @deck.length
+    end
+
+    def count
+      @count
     end
 
     def cards
